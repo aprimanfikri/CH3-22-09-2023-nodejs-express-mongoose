@@ -1,0 +1,79 @@
+swagger: '2.0'
+info:
+    title: API Tour
+    description: |
+        This is API TOUR
+    version: 1.0.0
+basePath: /
+schemes:
+    - http
+    - https
+paths:
+    /api/v1/tours:
+        get:
+            summary: Get all tours data.
+            description: |
+                Get all tours data.
+            tags:
+                - Tours
+            produces:
+                - application/json
+            responses:
+                200:
+                    description: OK
+        post:
+            summary: Create a new tour.
+            description: |
+                Create a new tour.
+            tags:
+                - Tours
+            parameters:
+                - name: body
+                  in: body
+                  description: Tour object that needs to be added to the store
+                  required: true
+                  schema:
+                      type: object
+                      properties:
+                          name:
+                              type: string
+                              example: Jakarta
+                          price:
+                              type: number
+                              example: 1000000
+                          rating:
+                              type: number
+                              example: 4.5
+                          duration:
+                              type: number
+                              example: 5
+                          maxGroupSize:
+                              type: number
+                              example: 10
+                          difficulty:
+                              type: string
+                              example: easy
+                          summary:
+                              type: string
+                              example: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.
+                          description:
+                              type: string
+                              example: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.
+                          imageCover:
+                              type: string
+                              example: tour-1-cover.jpg
+                          images:
+                              type: array
+                              items:
+                                  type: string
+                                  example: tour-1-1.jpg
+                          startDates:
+                              type: array
+                              items:
+                                  type: string
+                                  example: 2021-06-19T09:00:00.000Z
+            produces:
+                - application/json
+            responses:
+                200:
+                    description: OK

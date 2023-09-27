@@ -27,7 +27,6 @@ const getUserById = (req, res) => {
       message: `data with ${id} this not found`,
     })
   }
-
   res.status(200).json({
     status: "success",
     data: {
@@ -44,7 +43,6 @@ const createUser = (req, res) => {
     { id: newId },
     req.body
   )
-
   users.push(newData)
   fs.writeFile(
     `${__dirname}/../dev-data/data/users.json`,
